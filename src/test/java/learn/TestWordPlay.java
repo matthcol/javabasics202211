@@ -31,6 +31,7 @@ class TestWordPlay {
     }
 
     @ParameterizedTest
+    @MethodSource("learn.helper.WordGenerators#generateNonAnagramWords")
     void isAnagramKo(String word1, String word2) {
         boolean ok = WordPlay.isAnagram(word1, word2);
         assertFalse(ok);
