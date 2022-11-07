@@ -1,5 +1,7 @@
 package learn;
 
+import java.util.Arrays;
+
 public class WordPlay {
 
     // class method
@@ -20,6 +22,13 @@ public class WordPlay {
     }
 
     public static boolean isAnagram(String word1, String word2) {
-        return false;
+        if (word1.length() != word2.length()) {
+            return false;
+        }
+        char[] letters1 = word1.toCharArray();
+        char[] letters2 = word2.toCharArray();
+        Arrays.sort(letters1);
+        Arrays.sort(letters2);
+        return Arrays.equals(letters1, letters2);
     }
 }
