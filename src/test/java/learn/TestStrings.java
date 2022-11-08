@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestVariables {
+public class TestStrings {
 
     @Test
     void testStringUninitializedVariable() {
@@ -39,4 +39,35 @@ public class TestVariables {
                 () -> city.substring(9)
         );
     }
+
+    @Test
+    void testOperatorEquals(){
+        // test de ==
+        String city1 = "Toulouse";
+        String city2 = "Tou" + "louse";
+        // 2 strings are stored as one string in memory
+        boolean eq = city1 == city2;
+        System.out.println(eq);
+        String city3 = "Toulouse".toLowerCase();
+        String city4 = "TOULOusE".toLowerCase();
+        // 2 identical strings are stored at different @ in memory
+        boolean eq2 = city3 == city4;
+        System.out.println(eq2);
+     }
+     @Test
+     void testMethodEquals() {
+         String city3 = "Toulouse".toLowerCase();
+         String city4 = "TOULOusE".toLowerCase();
+         boolean eq = city3.equals(city4);
+         System.out.println(eq);
+     }
+
+
+
+
+
+
+
+
+
 }
