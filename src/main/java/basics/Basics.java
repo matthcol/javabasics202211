@@ -1,4 +1,4 @@
-package learn;
+package basics;
 
 public class Basics {
 

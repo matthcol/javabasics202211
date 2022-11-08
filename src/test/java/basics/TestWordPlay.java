@@ -1,4 +1,4 @@
-package learn;
+package basics;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,6 +13,7 @@ class TestWordPlay {
     @ValueSource(strings = {"hannah", "kayak", "w"})
     void isPalindromeWordOk(String word) {
         boolean ok = WordPlay.isPalindromeWord(word);
+        System.out.println(ok);
         assertTrue(ok);
     }
 
@@ -24,14 +25,14 @@ class TestWordPlay {
     }
 
     @ParameterizedTest
-    @MethodSource("learn.helper.WordGenerators#generateAnagramWords")
+    @MethodSource("basics.helper.WordGenerators#generateAnagramWords")
     void isAnagramOk(String word1, String word2) {
         boolean ok = WordPlay.isAnagram(word1, word2);
         assertTrue(ok);
     }
 
     @ParameterizedTest
-    @MethodSource("learn.helper.WordGenerators#generateNonAnagramWords")
+    @MethodSource("basics.helper.WordGenerators#generateNonAnagramWords")
     void isAnagramKo(String word1, String word2) {
         boolean ok = WordPlay.isAnagram(word1, word2);
         assertFalse(ok);
